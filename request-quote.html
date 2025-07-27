@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - Emerging Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1><a href="index.html">Emerging Engineer</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="request-quote.html" class="quote-btn active">Request Quote</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="quote-page">
+        <div class="container">
+            <div class="quote-header">
+                <h1>Request a Quote</h1>
+                <p>Get a personalized quote for your engineering project. Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+
+            <form id="quote-form" class="quote-form" novalidate>
+                <div class="form-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Company Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Job Title</label>
+                            <input type="text" id="title" name="title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Project Address/Location</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter the location where the engineering work will be performed"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Project Details</h2>
+                    <div class="form-group">
+                        <label for="projectType">Project Type *</label>
+                        <select id="projectType" name="projectType" required>
+                            <option value="">Select project type</option>
+                            <option value="structural">Structural Engineering</option>
+                            <option value="civil">Civil Engineering</option>
+                            <option value="mechanical">Mechanical Engineering</option>
+                            <option value="electrical">Electrical Engineering</option>
+                            <option value="environmental">Environmental Engineering</option>
+                            <option value="consulting">Engineering Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectDescription">Project Description *</label>
+                        <textarea id="projectDescription" name="projectDescription" rows="5" required placeholder="Please provide a detailed description of your project, including scope, objectives, and any specific requirements"></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeline">Desired Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="urgent">Urgent (1-2 weeks)</option>
+                                <option value="fast">Fast Track (3-4 weeks)</option>
+                                <option value="standard">Standard (1-2 months)</option>
+                                <option value="flexible">Flexible (3+ months)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k-50k">$15,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="over-100k">Over $100,000</option>
+                                <option value="discuss">Prefer to discuss</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Additional Information</h2>
+                    <div class="form-group">
+                        <label for="requirements">Special Requirements or Considerations</label>
+                        <textarea id="requirements" name="requirements" rows="4" placeholder="Any specific codes, standards, or special considerations for your project"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="heardAbout">How did you hear about us?</label>
+                        <select id="heardAbout" name="heardAbout">
+                            <option value="">Select source</option>
+                            <option value="google">Google Search</option>
+                            <option value="referral">Referral</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="previous-client">Previous Client</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            I would like to receive updates about engineering trends and company news
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Quote Request</button>
+                    <button type="reset" class="reset-btn">Clear Form</button>
+                </div>
+            </form>
+
+            <div class="contact-info">
+                <h3>Need immediate assistance?</h3>
+                <p>Call us at <strong>(555) 123-4567</strong> or email <strong>info@emergingengineer.com</strong></p>
+                <p>We typically respond to quote requests within 24 hours during business days.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Emerging Engineer. All rights reserved.</p>
+            <p><a href="request-quote.html">Request a Quote</a> | Contact Us</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
