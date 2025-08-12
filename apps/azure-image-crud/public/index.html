@@ -4,47 +4,79 @@
   <meta charset="utf-8" />
   <title>Azure Image CRUD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Inter font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
+  <meta name="color-scheme" content="dark light" />
 </head>
 <body>
-  <header>
-    <h1>Azure Image CRUD</h1>
+  <div class="app-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🖼️</span>
+        <h1>Azure Image CRUD</h1>
+      </div>
+      <p class="tagline">Upload, update, and manage images stored in Azure Blob Storage.</p>
+    </div>
   </header>
 
-  <main>
-    <section class="form-section">
-      <h2 id="form-title">Upload Image</h2>
-      <form id="image-form">
+  <main class="container">
+    <section class="panel form-section glass">
+      <div class="panel-header">
+        <h2 id="form-title">Upload Image</h2>
+        <p class="subtle">PNG, JPG up to the limit configured in the server (.env).</p>
+      </div>
+      <form id="image-form" class="form-grid">
         <input type="hidden" id="image-id" />
         <div class="field">
           <label for="title">Title</label>
-          <input id="title" name="title" type="text" required />
+          <input id="title" name="title" type="text" placeholder="Give your image a name" required />
         </div>
         <div class="field">
           <label for="description">Description</label>
-          <textarea id="description" name="description" rows="3"></textarea>
+          <textarea id="description" name="description" rows="3" placeholder="Optional details..."></textarea>
         </div>
         <div class="field" id="file-field">
           <label for="image">Image</label>
-          <input id="image" name="image" type="file" accept="image/*" />
+          <div class="dropzone">
+            <input id="image" name="image" type="file" accept="image/*" />
+            <div class="dropzone-hint">
+              <strong>Choose a file</strong>
+              <span>or drag and drop</span>
+            </div>
+          </div>
         </div>
         <div class="actions">
-          <button type="submit" id="submit-btn">Create</button>
-          <button type="button" id="cancel-edit-btn" class="secondary" style="display:none;">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit-btn">Create</button>
+          <button type="button" class="btn btn-secondary" id="cancel-edit-btn" style="display:none;">Cancel</button>
         </div>
       </form>
     </section>
 
     <section>
-      <h2>Images</h2>
+      <div class="section-header">
+        <h2>Images</h2>
+        <div class="legend">
+          <span class="badge">Public</span>
+          <span class="badge badge-ok">Healthy</span>
+        </div>
+      </div>
       <div id="images-list" class="grid"></div>
     </section>
   </main>
 
-  <footer>
-    <small>Demo app - Images stored in Azure Blob Storage, metadata in SQLite.</small>
+  <footer class="site-footer">
+    <div class="container">
+      <small>Demo app &middot; Images in Azure Blob Storage, metadata in SQLite.</small>
+    </div>
   </footer>
 
   <script src="/app.js" defer></script>
+  <noscript>This app requires JavaScript enabled.</noscript>
+  
 </body>
 </html>
