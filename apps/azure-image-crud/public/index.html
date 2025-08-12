@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Azure Image CRUD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Azure Image CRUD</h1>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2 id="form-title">Upload Image</h2>
+      <form id="image-form">
+        <input type="hidden" id="image-id" />
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" required />
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3"></textarea>
+        </div>
+        <div class="field" id="file-field">
+          <label for="image">Image</label>
+          <input id="image" name="image" type="file" accept="image/*" />
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-btn">Create</button>
+          <button type="button" id="cancel-edit-btn" class="secondary" style="display:none;">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Images</h2>
+      <div id="images-list" class="grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Demo app - Images stored in Azure Blob Storage, metadata in SQLite.</small>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
