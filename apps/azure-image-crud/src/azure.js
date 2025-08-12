@@ -1,4 +1,4 @@
-import { BlobServiceClient, PublicAccessType } from "@azure/storage-blob";
+import { BlobServiceClient } from "@azure/storage-blob";
 import crypto from "crypto";
 
 const connStr = process.env.AZURE_STORAGE_CONNECTION_STRING;
@@ -14,7 +14,7 @@ const containerClient = blobServiceClient.getContainerClient(containerName);
 
 // Ensure container exists with blob-level public access for simple viewing
 export async function ensureContainer() {
-  const res = await containerClient.createIfNotExists({ access: PublicAccessType.Blob });
+  const res = await containerClient.createIfNotExists({ access: "blob" });
   if (res.succeeded) {
     console.log(`Container '${containerName}' created with blob public access.`);
   } else {
